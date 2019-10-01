@@ -35,8 +35,8 @@ input_list = user_input.split(" ")
 if user_input == "":
     print(calendar.month(datetime.today().year, datetime.today().month))
 elif not all(num.isdigit() for num in input_list) or len(input_list) > 2 or int(input_list[0]) > 12:
-    print("If no input is given, current month and year will be the output \
-      If number from 1 to 12 is given => month of the current year will be the output")
+    print("If no input is given, current month and year will be the output\n\
+    If number from 1 to 12 is given => month of the current year will be the output")
 elif len(input_list) == 1:
     print(calendar.month(datetime.today().year, int(user_input)))
 else:
