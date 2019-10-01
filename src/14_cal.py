@@ -23,7 +23,21 @@ import sys
 import calendar
 from datetime import datetime
 
-year = int(input("Input the year : "))
-month = int(input("Input the month : "))
+# year = int(input("Input the year : "))
+# month = int(input("Input the month : "))
 
-print(calendar.month(year, month))
+# print(calendar.month(year, month))
+
+user_input = input("Give me a month and year:")
+
+input_list = user_input.split(" ")
+
+if user_input == "":
+    print(calendar.month(datetime.today().year, datetime.today().month))
+elif not all(num.isdigit() for num in input_list) or len(input_list) > 2 or int(input_list[0]) > 12:
+    print("If no input is given, current month and year will be the output \
+      If number from 1 to 12 is given => month of the current year will be the output")
+elif len(input_list) == 1:
+    print(calendar.month(datetime.today().year, int(user_input)))
+else:
+    print(calendar.month(int(input_list[1]), int(input_list[0])))
