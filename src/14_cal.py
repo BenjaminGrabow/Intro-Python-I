@@ -22,3 +22,8 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+year = int(input("Input the year : "))
+month = int(input("Input the month : "))
+
+print(calendar.month(year, month))
